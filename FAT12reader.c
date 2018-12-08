@@ -1,3 +1,9 @@
+/*
+	* Disciplina: Sistemas Operacionais
+	* Professor: Roberto Souza
+	* Equipe: Alfonso Martinez, Jo√£o Pedro Barbosa e Daniel Tavares
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -140,7 +146,7 @@ int main(int argc, char* argv[])
 	int end_raiz = 19 * bytes_setor;
 	int tam_raiz = 14 * bytes_setor;
 
-	/* Loop para printar todos os arquivos do diretÛrio raiz. */
+	/* Loop para printar todos os arquivos do diret√≥rio raiz. */
 	for (int i = end_raiz; i < end_raiz + tam_raiz; i += 32)
 	{
 		ds.atributos = atributos_dr(p, i); 
@@ -151,19 +157,19 @@ int main(int argc, char* argv[])
 			ds.tamanho = tamanho_arq(p, i);
 			ds.nome_do_arquivo = nome_arq(p, i);
 
-			/* Pegar a hora de criaÁ„o do arquivo */
+			/* Pegar a hora de cria√ß√£o do arquivo */
 			int hora_criacao = (int)((p[i + 14] & 0xFF) | (p[i + 15] & 0xFF) << 8);
 			int hora = hora_criacao >> 11;
 			int minuto = (hora_criacao >> 5) & 0x3F;
 			int segundo =  (hora_criacao & 0x1F) * 2;
 
-			/* Pegar a data de criaÁ„o do arquivo */
+			/* Pegar a data de cria√ß√£o do arquivo */
 			int data_criacao = (int)((p[i + 16] & 0xFF) | (p[i + 17] & 0xFF) << 8);
 			int ano = 1980 + (data_criacao >> 9);
 			int mes = (data_criacao >> 5) & 0x1F;
 			int dia = data_criacao & 0x1F;
 
-			/* Printar os atributos do arquivo do diretÛrio raiz */
+			/* Printar os atributos do arquivo do diret√≥rio raiz */
 			printf("Tipo de arquivo: %c\n", ds.extensao);
 			printf("Tamanho do arquivo: %d\n", ds.tamanho);
 			printf("Nome do arquivo: %s \n", ds.nome_do_arquivo);

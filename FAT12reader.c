@@ -164,10 +164,11 @@ int main(int argc, char* argv[])
 			int dia = data_criacao & 0x1F;
 
 			/* Printar os atributos do arquivo do diretório raiz */
-			printf("Tipo de arquivo: %c\n ", ds.extensao);
-			printf("Tamanho do arquivo: %d\n ", ds.tamanho);
+			printf("Tipo de arquivo: %c\n", ds.extensao);
+			printf("Tamanho do arquivo: %d\n", ds.tamanho);
 			printf("Nome do arquivo: %s \n", ds.nome_do_arquivo);
 			printf("Data/Hora: %d/%02d/%02d %02d:%02d:%02d\n", ano, mes, dia, hora, minuto, segundo);
+			printf("\n================================\n");
 		}
 	}
 

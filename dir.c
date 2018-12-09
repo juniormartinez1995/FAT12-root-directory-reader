@@ -88,7 +88,7 @@ char* nome_arq(char* a, int i)
 	char* nomeArq = malloc(sizeof(char));
 	if (nomeArq == 0)
 	{
-		printf("Malloc failed.\n");
+		printf("Falha ao alocar espaco.\n");
 		exit(1);
 	}
 
